@@ -21,8 +21,8 @@ $stmt->bindParam(2, $senha,PDO::PARAM_STR);
 
 $stmt->execute();
 if($alvos = $stmt->fetchAll()){
-	echo "Olá, ".$alvos[0]['nome']."<br>Seu saldo é de: ".$alvos[0]['saldo']." pontos";
 	$saldo = $alvos[0]['saldo'];
+	echo "Olá, ".$alvos[0]['nome']."<br>Seu saldo é de:".$saldo ." pontos";
 	echo "<br>Clique". "<a href='get.php?saldo=$saldo'>
 	Aqui
 	</a>";
