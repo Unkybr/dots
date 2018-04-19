@@ -4,7 +4,7 @@ $saldo = $_GET['saldo'];
 	
 
 
-//$cpf = base64_decode($cpf);
+$saldo = base64_decode($saldo);
 echo "Saldo anterior : ".$saldo ."<br>";
 echo "Saldo da Compra = 20<br>";
 $saldo = $saldo + 20;

@@ -22,12 +22,14 @@ $stmt->bindParam(2, $senha,PDO::PARAM_STR);
 $stmt->execute();
 if($alvos = $stmt->fetchAll()){
 	$saldo = $alvos[0]['saldo'];
+	
 	echo "Olá, ".$alvos[0]['nome']."<br>Seu saldo é de:".$saldo ." pontos";
+	$saldo = base64_encode($saldo);
 	echo "<br>Clique". "<a href='get.php?saldo=$saldo'>
 	Aqui
 	</a>";
 } else{
-	echo "ERRRRROOOOOOOOOOOOOOU!";
+	echo "Dados Incorretos";
 	header('refresh:5;url=botao.html',true,303);
 }
 ?>
